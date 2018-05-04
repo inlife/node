@@ -16,7 +16,7 @@ snippet: "
 "
 frame size: 23
 parameter count: 1
-bytecode array length: 514
+bytecode array length: 510
 bytecodes: [
                 B(SwitchOnGeneratorState), R(2), U8(0), U8(3),
                 B(Mov), R(closure), R(12),
@@ -60,7 +60,7 @@ bytecodes: [
                 B(InvokeIntrinsic), U8(Runtime::k_GeneratorGetResumeMode), R(2), U8(1),
                 B(Star), R(21),
                 B(LdaZero),
-                B(TestEqualStrictNoFeedback), R(21),
+                B(TestReferenceEqual), R(21),
                 B(JumpIfTrue), U8(5),
                 B(Ldar), R(20),
                 B(ReThrow),
@@ -81,9 +81,8 @@ bytecodes: [
                 B(LdaZero),
                 B(Star), R(7),
                 B(JumpLoop), U8(82), I8(0),
-                B(Jump), U8(40),
+                B(Jump), U8(38),
                 B(Star), R(20),
-                B(Ldar), R(closure),
                 B(CreateCatchContext), R(20), U8(9), U8(10),
                 B(Star), R(19),
                 B(LdaTheHole),
@@ -124,7 +123,7 @@ bytecodes: [
                 B(TestTypeOf), U8(6),
                 B(JumpIfFalse), U8(4),
                 B(Jump), U8(18),
-                B(Wide), B(LdaSmi), I16(146),
+                B(Wide), B(LdaSmi), I16(145),
                 B(Star), R(19),
                 B(LdaConstant), U8(12),
                 B(Star), R(20),
@@ -144,7 +143,7 @@ bytecodes: [
                 B(InvokeIntrinsic), U8(Runtime::k_GeneratorGetResumeMode), R(2), U8(1),
                 B(Star), R(21),
                 B(LdaZero),
-                B(TestEqualStrictNoFeedback), R(21),
+                B(TestReferenceEqual), R(21),
                 B(JumpIfTrue), U8(5),
                 B(Ldar), R(20),
                 B(ReThrow),
@@ -167,7 +166,7 @@ bytecodes: [
                 B(InvokeIntrinsic), U8(Runtime::k_GeneratorGetResumeMode), R(2), U8(1),
                 B(Star), R(20),
                 B(LdaZero),
-                B(TestEqualStrictNoFeedback), R(20),
+                B(TestReferenceEqual), R(20),
                 B(JumpIfTrue), U8(5),
                 B(Ldar), R(19),
                 B(ReThrow),
@@ -179,7 +178,7 @@ bytecodes: [
                 B(Ldar), R(18),
                 B(SetPendingMessage),
                 B(LdaZero),
-                B(TestEqualStrictNoFeedback), R(16),
+                B(TestReferenceEqual), R(16),
                 B(JumpIfFalse), U8(5),
                 B(Ldar), R(17),
                 B(ReThrow),
@@ -190,10 +189,9 @@ bytecodes: [
                 B(LdaZero),
                 B(Star), R(12),
                 B(Mov), R(11), R(13),
-                B(Jump), U8(58),
-                B(Jump), U8(42),
+                B(Jump), U8(56),
+                B(Jump), U8(40),
                 B(Star), R(16),
-                B(Ldar), R(closure),
                 B(CreateCatchContext), R(16), U8(9), U8(13),
                 B(Star), R(15),
                 B(LdaTheHole),
@@ -236,8 +234,8 @@ bytecodes: [
 ]
 constant pool: [
   Smi [110],
-  Smi [309],
-  Smi [366],
+  Smi [307],
+  Smi [364],
   TUPLE2_TYPE,
   SYMBOL_TYPE,
   SYMBOL_TYPE,
@@ -253,11 +251,11 @@ constant pool: [
   Smi [9],
 ]
 handlers: [
-  [26, 473, 481],
-  [29, 431, 433],
-  [35, 214, 222],
+  [26, 469, 477],
+  [29, 429, 431],
+  [35, 212, 220],
   [38, 174, 176],
-  [282, 331, 333],
+  [280, 329, 331],
 ]
 
 ---
@@ -269,7 +267,7 @@ snippet: "
 "
 frame size: 23
 parameter count: 1
-bytecode array length: 543
+bytecode array length: 539
 bytecodes: [
                 B(SwitchOnGeneratorState), R(2), U8(0), U8(3),
                 B(Mov), R(closure), R(12),
@@ -313,7 +311,7 @@ bytecodes: [
                 B(InvokeIntrinsic), U8(Runtime::k_GeneratorGetResumeMode), R(2), U8(1),
                 B(Star), R(21),
                 B(LdaZero),
-                B(TestEqualStrictNoFeedback), R(21),
+                B(TestReferenceEqual), R(21),
                 B(JumpIfTrue), U8(5),
                 B(Ldar), R(20),
                 B(ReThrow),
@@ -334,10 +332,9 @@ bytecodes: [
   /*   56 S> */ B(LdaZero),
                 B(Star), R(16),
                 B(Mov), R(8), R(17),
-                B(Jump), U8(56),
-                B(Jump), U8(40),
+                B(Jump), U8(54),
+                B(Jump), U8(38),
                 B(Star), R(20),
-                B(Ldar), R(closure),
                 B(CreateCatchContext), R(20), U8(9), U8(10),
                 B(Star), R(19),
                 B(LdaTheHole),
@@ -378,7 +375,7 @@ bytecodes: [
                 B(TestTypeOf), U8(6),
                 B(JumpIfFalse), U8(4),
                 B(Jump), U8(18),
-                B(Wide), B(LdaSmi), I16(146),
+                B(Wide), B(LdaSmi), I16(145),
                 B(Star), R(19),
                 B(LdaConstant), U8(12),
                 B(Star), R(20),
@@ -398,7 +395,7 @@ bytecodes: [
                 B(InvokeIntrinsic), U8(Runtime::k_GeneratorGetResumeMode), R(2), U8(1),
                 B(Star), R(21),
                 B(LdaZero),
-                B(TestEqualStrictNoFeedback), R(21),
+                B(TestReferenceEqual), R(21),
                 B(JumpIfTrue), U8(5),
                 B(Ldar), R(20),
                 B(ReThrow),
@@ -421,7 +418,7 @@ bytecodes: [
                 B(InvokeIntrinsic), U8(Runtime::k_GeneratorGetResumeMode), R(2), U8(1),
                 B(Star), R(20),
                 B(LdaZero),
-                B(TestEqualStrictNoFeedback), R(20),
+                B(TestReferenceEqual), R(20),
                 B(JumpIfTrue), U8(5),
                 B(Ldar), R(19),
                 B(ReThrow),
@@ -438,7 +435,7 @@ bytecodes: [
                 B(LdaZero),
                 B(Star), R(12),
                 B(Mov), R(17), R(13),
-                B(Jump), U8(81),
+                B(Jump), U8(79),
                 B(Ldar), R(17),
                 B(ReThrow),
                 B(LdaUndefined),
@@ -448,10 +445,9 @@ bytecodes: [
                 B(LdaSmi), I8(1),
                 B(Star), R(12),
                 B(Mov), R(11), R(13),
-                B(Jump), U8(59),
-                B(Jump), U8(43),
+                B(Jump), U8(57),
+                B(Jump), U8(41),
                 B(Star), R(16),
-                B(Ldar), R(closure),
                 B(CreateCatchContext), R(16), U8(9), U8(15),
                 B(Star), R(15),
                 B(LdaTheHole),
@@ -499,8 +495,8 @@ bytecodes: [
 ]
 constant pool: [
   Smi [110],
-  Smi [312],
-  Smi [369],
+  Smi [310],
+  Smi [367],
   TUPLE2_TYPE,
   SYMBOL_TYPE,
   SYMBOL_TYPE,
@@ -519,11 +515,11 @@ constant pool: [
   Smi [22],
 ]
 handlers: [
-  [26, 489, 497],
-  [29, 446, 448],
-  [35, 216, 224],
+  [26, 485, 493],
+  [29, 444, 446],
+  [35, 214, 222],
   [38, 176, 178],
-  [285, 334, 336],
+  [283, 332, 334],
 ]
 
 ---
@@ -538,7 +534,7 @@ snippet: "
 "
 frame size: 23
 parameter count: 1
-bytecode array length: 532
+bytecode array length: 528
 bytecodes: [
                 B(SwitchOnGeneratorState), R(2), U8(0), U8(3),
                 B(Mov), R(closure), R(12),
@@ -582,7 +578,7 @@ bytecodes: [
                 B(InvokeIntrinsic), U8(Runtime::k_GeneratorGetResumeMode), R(2), U8(1),
                 B(Star), R(21),
                 B(LdaZero),
-                B(TestEqualStrictNoFeedback), R(21),
+                B(TestReferenceEqual), R(21),
                 B(JumpIfTrue), U8(5),
                 B(Ldar), R(20),
                 B(ReThrow),
@@ -611,9 +607,8 @@ bytecodes: [
                 B(LdaZero),
                 B(Star), R(7),
                 B(JumpLoop), U8(100), I8(0),
-                B(Jump), U8(40),
+                B(Jump), U8(38),
                 B(Star), R(20),
-                B(Ldar), R(closure),
                 B(CreateCatchContext), R(20), U8(9), U8(10),
                 B(Star), R(19),
                 B(LdaTheHole),
@@ -654,7 +649,7 @@ bytecodes: [
                 B(TestTypeOf), U8(6),
                 B(JumpIfFalse), U8(4),
                 B(Jump), U8(18),
-                B(Wide), B(LdaSmi), I16(146),
+                B(Wide), B(LdaSmi), I16(145),
                 B(Star), R(19),
                 B(LdaConstant), U8(12),
                 B(Star), R(20),
@@ -674,7 +669,7 @@ bytecodes: [
                 B(InvokeIntrinsic), U8(Runtime::k_GeneratorGetResumeMode), R(2), U8(1),
                 B(Star), R(21),
                 B(LdaZero),
-                B(TestEqualStrictNoFeedback), R(21),
+                B(TestReferenceEqual), R(21),
                 B(JumpIfTrue), U8(5),
                 B(Ldar), R(20),
                 B(ReThrow),
@@ -697,7 +692,7 @@ bytecodes: [
                 B(InvokeIntrinsic), U8(Runtime::k_GeneratorGetResumeMode), R(2), U8(1),
                 B(Star), R(20),
                 B(LdaZero),
-                B(TestEqualStrictNoFeedback), R(20),
+                B(TestReferenceEqual), R(20),
                 B(JumpIfTrue), U8(5),
                 B(Ldar), R(19),
                 B(ReThrow),
@@ -709,7 +704,7 @@ bytecodes: [
                 B(Ldar), R(18),
                 B(SetPendingMessage),
                 B(LdaZero),
-                B(TestEqualStrictNoFeedback), R(16),
+                B(TestReferenceEqual), R(16),
                 B(JumpIfFalse), U8(5),
                 B(Ldar), R(17),
                 B(ReThrow),
@@ -720,10 +715,9 @@ bytecodes: [
                 B(LdaZero),
                 B(Star), R(12),
                 B(Mov), R(11), R(13),
-                B(Jump), U8(58),
-                B(Jump), U8(42),
+                B(Jump), U8(56),
+                B(Jump), U8(40),
                 B(Star), R(16),
-                B(Ldar), R(closure),
                 B(CreateCatchContext), R(16), U8(9), U8(13),
                 B(Star), R(15),
                 B(LdaTheHole),
@@ -766,8 +760,8 @@ bytecodes: [
 ]
 constant pool: [
   Smi [110],
-  Smi [327],
-  Smi [384],
+  Smi [325],
+  Smi [382],
   TUPLE2_TYPE,
   SYMBOL_TYPE,
   SYMBOL_TYPE,
@@ -783,11 +777,11 @@ constant pool: [
   Smi [9],
 ]
 handlers: [
-  [26, 491, 499],
-  [29, 449, 451],
-  [35, 232, 240],
+  [26, 487, 495],
+  [29, 447, 449],
+  [35, 230, 238],
   [38, 192, 194],
-  [300, 349, 351],
+  [298, 347, 349],
 ]
 
 ---
@@ -800,7 +794,7 @@ snippet: "
 "
 frame size: 20
 parameter count: 1
-bytecode array length: 403
+bytecode array length: 399
 bytecodes: [
   /*   16 E> */ B(StackCheck),
                 B(CallJSRuntime), U8(%async_function_promise_create), R(0), U8(0),
@@ -842,10 +836,9 @@ bytecodes: [
                 B(Star), R(15),
                 B(LdaZero),
                 B(Star), R(14),
-                B(Jump), U8(56),
-                B(Jump), U8(40),
+                B(Jump), U8(54),
+                B(Jump), U8(38),
                 B(Star), R(18),
-                B(Ldar), R(closure),
                 B(CreateCatchContext), R(18), U8(7), U8(8),
                 B(Star), R(17),
                 B(LdaTheHole),
@@ -886,7 +879,7 @@ bytecodes: [
                 B(TestTypeOf), U8(6),
                 B(JumpIfFalse), U8(4),
                 B(Jump), U8(18),
-                B(Wide), B(LdaSmi), I16(146),
+                B(Wide), B(LdaSmi), I16(145),
                 B(Star), R(17),
                 B(LdaConstant), U8(10),
                 B(Star), R(18),
@@ -917,7 +910,7 @@ bytecodes: [
                 B(LdaZero),
                 B(Star), R(10),
                 B(Mov), R(15), R(11),
-                B(Jump), U8(81),
+                B(Jump), U8(79),
                 B(Ldar), R(15),
                 B(ReThrow),
                 B(LdaUndefined),
@@ -927,10 +920,9 @@ bytecodes: [
                 B(LdaSmi), I8(1),
                 B(Star), R(10),
                 B(Mov), R(9), R(11),
-                B(Jump), U8(59),
-                B(Jump), U8(43),
+                B(Jump), U8(57),
+                B(Jump), U8(41),
                 B(Star), R(14),
-                B(Ldar), R(closure),
                 B(CreateCatchContext), R(14), U8(7), U8(13),
                 B(Star), R(13),
                 B(LdaTheHole),
@@ -977,7 +969,7 @@ bytecodes: [
   /*   96 S> */ B(Return),
 ]
 constant pool: [
-  FIXED_ARRAY_TYPE,
+  BOILERPLATE_DESCRIPTION_TYPE,
   TUPLE2_TYPE,
   SYMBOL_TYPE,
   ONE_BYTE_INTERNALIZED_STRING_TYPE ["next"],
@@ -996,10 +988,10 @@ constant pool: [
   Smi [22],
 ]
 handlers: [
-  [10, 349, 357],
-  [13, 306, 308],
-  [27, 153, 161],
+  [10, 345, 353],
+  [13, 304, 306],
+  [27, 151, 159],
   [30, 113, 115],
-  [222, 232, 234],
+  [220, 230, 232],
 ]
 

@@ -21,6 +21,7 @@
 namespace v8 {
 namespace internal {
 
+class FeedbackVectorSpec;
 class Isolate;
 
 namespace interpreter {
@@ -160,6 +161,10 @@ class V8_EXPORT_PRIVATE BytecodeArrayBuilder final {
   BytecodeArrayBuilder& StoreKeyedProperty(Register object, Register key,
                                            int feedback_slot,
                                            LanguageMode language_mode);
+  // Store an own element in an array literal. The value to be stored should be
+  // in the accumulator.
+  BytecodeArrayBuilder& StoreInArrayLiteral(Register array, Register index,
+                                            int feedback_slot);
   // Store the home object property. The value to be stored should be in the
   // accumulator.
   BytecodeArrayBuilder& StoreHomeObjectProperty(Register object,
@@ -213,11 +218,11 @@ class V8_EXPORT_PRIVATE BytecodeArrayBuilder final {
                                            const AstRawString* name,
                                            const Scope* scope);
 
-  // Create a new context with size |slots|.
-  BytecodeArrayBuilder& CreateFunctionContext(int slots);
+  // Create a new context with the given |scope| and size |slots|.
+  BytecodeArrayBuilder& CreateFunctionContext(const Scope* scope, int slots);
 
-  // Create a new eval context with size |slots|.
-  BytecodeArrayBuilder& CreateEvalContext(int slots);
+  // Create a new eval context with the given |scope| and size |slots|.
+  BytecodeArrayBuilder& CreateEvalContext(const Scope* scope, int slots);
 
   // Creates a new context with the given |scope| for a with-statement
   // with the |object| in a register and the closure in the accumulator.
@@ -361,6 +366,7 @@ class V8_EXPORT_PRIVATE BytecodeArrayBuilder final {
   BytecodeArrayBuilder& CompareOperation(Token::Value op, Register reg,
                                          int feedback_slot);
   BytecodeArrayBuilder& CompareOperation(Token::Value op, Register reg);
+  BytecodeArrayBuilder& CompareReference(Register reg);
   BytecodeArrayBuilder& CompareUndetectable();
   BytecodeArrayBuilder& CompareUndefined();
   BytecodeArrayBuilder& CompareNull();
@@ -371,6 +377,7 @@ class V8_EXPORT_PRIVATE BytecodeArrayBuilder final {
   // Converts accumulator and stores result in register |out|.
   BytecodeArrayBuilder& ToObject(Register out);
   BytecodeArrayBuilder& ToName(Register out);
+  BytecodeArrayBuilder& ToString();
 
   // Converts accumulator and stores result back in accumulator.
   BytecodeArrayBuilder& ToNumber(int feedback_slot);
