@@ -181,7 +181,7 @@
       }],
       [ 'OS=="win" and '
         'node_use_openssl=="true" and '
-        'node_shared_openssl=="false"', {
+        'node_shared_openssl=="false" and node_shared="false"', {
         'use_openssl_def': 1,
       }, {
         'use_openssl_def': 0,

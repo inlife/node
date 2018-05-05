@@ -4731,6 +4731,7 @@ Environment* CreateEnvironment(IsolateData* isolate_data,
                                const char* const* argv,
                                int exec_argc,
                                const char* const* exec_argv) {
+  node::tracing::TraceEventHelper::SetTracingController(new v8::TracingController());
   Isolate* isolate = context->GetIsolate();
   HandleScope handle_scope(isolate);
   Context::Scope context_scope(context);
